@@ -18,7 +18,7 @@ public class Skin {
     // @Enumerated(EnumType.STRING)
     private Condition condition;
     private double price;
-    
+
     public Skin() {
     }
 
