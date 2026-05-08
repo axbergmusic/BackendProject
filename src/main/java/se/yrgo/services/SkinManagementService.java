@@ -15,7 +15,7 @@ public interface SkinManagementService {
 
     public Skin getById(int id);
 
-    public List<Skin> getByName(int id);
+    public List<Skin> getByName(String name);
 
     public List<Skin> getByType(Type type);
 
