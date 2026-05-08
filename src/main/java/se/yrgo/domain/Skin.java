@@ -11,8 +11,11 @@ public class Skin {
     private int id;
 
     private String name;
+    // @Enumerated(EnumType.STRING)
     private Type type;
+    // @Enumerated(EnumType.STRING)
     private Rarity rarity;
+    // @Enumerated(EnumType.STRING)
     private Condition condition;
     private double price;
     
