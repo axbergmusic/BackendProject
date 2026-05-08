@@ -6,11 +6,11 @@ import se.yrgo.domain.*;
 
 public interface PlayerDao {
 
-    public void create(Skin skin);
+    public void create(Player player);
 
-    public void update(Skin skin);
+    public void update(Player player);
 
-    public void delete(Skin skin);
+    public void delete(Player player);
 
     public Player getById(int id);
 
