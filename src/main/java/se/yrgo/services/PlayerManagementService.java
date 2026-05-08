@@ -4,7 +4,7 @@ import java.util.List;
 
 import se.yrgo.domain.*;
 
-public interface PlayerManagementImplementation {
+public interface PlayerManagementService {
 
     public void create(Player player);
 

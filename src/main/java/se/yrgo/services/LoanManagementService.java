@@ -4,7 +4,7 @@ import java.util.List;
 
 import se.yrgo.domain.*;
 
-public interface LoanManagementImplementation {
+public interface LoanManagementService {
 
     public void create(Loan loan);
 

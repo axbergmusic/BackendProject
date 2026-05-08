@@ -5,7 +5,7 @@ import java.util.List;
 import se.yrgo.domain.*;
 import se.yrgo.domain.enums.*;
 
-public interface SkinManagementImplementation {
+public interface SkinManagementService {
 
     public void create(Skin skin);
 
