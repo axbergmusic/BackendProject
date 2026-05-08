@@ -2,10 +2,7 @@ package se.yrgo.domain;
 
 import se.yrgo.domain.enums.*;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 
 @Entity
 public class Skin {
@@ -20,6 +17,15 @@ public class Skin {
     private double price;
     
     public Skin() {
+    }
+
+    public Skin(int id, String name, Type type, Rarity rarity, Condition condition, double price) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.rarity = rarity;
+        this.condition = condition;
+        this.price = price;
     }
 
     public int getId() {
