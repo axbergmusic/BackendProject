@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import jakarta.persistence.*;
-import se.yrgo.domain.*;
+import se.yrgo.domain.Skin;
 import se.yrgo.domain.enums.*;
 
 @Repository
