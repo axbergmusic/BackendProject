@@ -9,17 +9,12 @@ import se.yrgo.services.*;
 public class Client {
     public static void main(String[] args) {
 
-        ApplicationContext tx =
-                new ClassPathXmlApplicationContext("application.xml");
+        ApplicationContext tx = new ClassPathXmlApplicationContext("application.xml");
 
         // Get services from Spring
-        PlayerManagementService playerService =
-                tx.getBean(PlayerManagementService.class);
-        SkinManagementService skinService =
-                tx.getBean(SkinManagementService.class);
-        LoanManagementService loanService =
-                tx.getBean(LoanManagementService.class);
-
+        PlayerManagementService playerService = tx.getBean(PlayerManagementService.class);
+        SkinManagementService skinService = tx.getBean(SkinManagementService.class);
+        LoanManagementService loanService = tx.getBean(LoanManagementService.class);
 
         Player player = new Player();
         player.setName("s1mple");
