@@ -30,8 +30,8 @@ public class LoanDaoImpl implements LoanDao {
 
     @Override
     public List<Loan> getByPlayer(int id) {
-        return em.createQuery("from Loan as loan where loan.player = :player", Loan.class)
-                .setParameter("id", id)
+        return em.createQuery("from Loan as loan where loan.player.id = :player", Loan.class)
+                .setParameter("player", id)
                 .getResultList();
     }
 

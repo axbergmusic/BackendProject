@@ -53,15 +53,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- OR PostgreSQL -->
-        <!--
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.7.3</version>
-        </dependency>
-        -->
-
         <!-- Transaction support -->
         <dependency>
             <groupId>org.springframework</groupId>
