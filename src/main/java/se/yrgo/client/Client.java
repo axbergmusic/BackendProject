@@ -217,11 +217,11 @@ public class Client {
         skinService.create(skin3);
 
         Skin skin4 = new Skin();
-        skin4.setName("Desert Eagle | Blaze");
-        skin4.setType(Type.PISTOL);
-        skin4.setRarity(Rarity.RESTRICTED);
-        skin4.setCondition(Condition.FACTORYNEW);
-        skin4.setPrice(450.75);
+        skin4.setName("MP7 | Armor Core");
+        skin4.setType(Type.SMG);
+        skin4.setRarity(Rarity.MILSPEC);
+        skin4.setCondition(Condition.FIELDTESTED);
+        skin4.setPrice(2.35);
         skinService.create(skin4);
 
         Skin skin5 = new Skin();
@@ -271,5 +271,85 @@ public class Client {
         skin10.setCondition(Condition.MINIMALWEAR);
         skin10.setPrice(21.35);
         skinService.create(skin10);
+
+        Skin skin11 = new Skin();
+        skin11.setName("Mac-10 | Fade");
+        skin11.setType(Type.SMG);
+        skin11.setRarity(Rarity.MILSPEC);
+        skin11.setCondition(Condition.MINIMALWEAR);
+        skin11.setPrice(77.85);
+        skinService.create(skin11);
+
+        Skin skin12 = new Skin();
+        skin12.setName("Desert Eagle | Blaze");
+        skin12.setType(Type.PISTOL);
+        skin12.setRarity(Rarity.RESTRICTED);
+        skin12.setCondition(Condition.FACTORYNEW);
+        skin12.setPrice(450.75);
+        skinService.create(skin12);
+
+        Skin skin13 = new Skin();
+        skin13.setName("P250 | Valence");
+        skin13.setType(Type.PISTOL);
+        skin13.setRarity(Rarity.MILSPEC);
+        skin13.setCondition(Condition.WELLWORN);
+        skin13.setPrice(1.80);
+        skinService.create(skin13);
+
+        Skin skin14 = new Skin();
+        skin14.setName("Sport Gloves | Vice");
+        skin14.setType(Type.GLOVES);
+        skin14.setRarity(Rarity.GOLD);
+        skin14.setCondition(Condition.FACTORYNEW);
+        skin14.setPrice(7600.92);
+        skinService.create(skin14);
+
+        Skin skin15 = new Skin();
+        skin15.setName("AK-47 | Redline (Minimal Wear)");
+        skin15.setType(Type.RIFLE);
+        skin15.setRarity(Rarity.CLASSIFIED);
+        skin15.setCondition(Condition.MINIMALWEAR);
+        skin15.setPrice(28.99);
+        skinService.create(skin15);
+
+        Skin skin16 = new Skin();
+        skin16.setName("M4A1-S | Cyrex");
+        skin16.setType(Type.RIFLE);
+        skin16.setRarity(Rarity.COVERT);
+        skin16.setCondition(Condition.FIELDTESTED);
+        skin16.setPrice(45.00);
+        skinService.create(skin16);
+
+        Skin skin17 = new Skin();
+        skin17.setName("Glock-18 | Candy Apple");
+        skin17.setType(Type.PISTOL);
+        skin17.setRarity(Rarity.MILSPEC);
+        skin17.setCondition(Condition.FACTORYNEW);
+        skin17.setPrice(3.10);
+        skinService.create(skin17);
+
+        Skin skin18 = new Skin();
+        skin18.setName("AWP | Dragon Lore (Souvenir)");
+        skin18.setType(Type.RIFLE);
+        skin18.setRarity(Rarity.CONTRABAND);
+        skin18.setCondition(Condition.FIELDTESTED);
+        skin18.setPrice(2600.00);
+        skinService.create(skin18);
+
+        Skin skin19 = new Skin();
+        skin19.setName("USP-S | Guardian");
+        skin19.setType(Type.PISTOL);
+        skin19.setRarity(Rarity.RESTRICTED);
+        skin19.setCondition(Condition.MINIMALWEAR);
+        skin19.setPrice(12.75);
+        skinService.create(skin19);
+
+        Skin skin20 = new Skin();
+        skin20.setName("Butterfly Knife | Night");
+        skin20.setType(Type.MELEE);
+        skin20.setRarity(Rarity.GOLD);
+        skin20.setCondition(Condition.WELLWORN);
+        skin20.setPrice(950.00);
+        skinService.create(skin20);
     }
 }

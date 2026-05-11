@@ -5,5 +5,6 @@ public enum Type {
     PISTOL,
     HEAVY,
     SMG,
-    RIFLE
+    RIFLE,
+    GLOVES
 }
