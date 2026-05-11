@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) {
-
         ApplicationContext tx = new ClassPathXmlApplicationContext("application.xml");
 
         PlayerManagementService playerService = tx.getBean(PlayerManagementService.class);
@@ -23,6 +22,7 @@ public class Client {
 
         int playerChoice = 0;
         int menuChoice = 0;
+
         Player player = new Player();
 
         try (Scanner sc = new Scanner(System.in)) {
@@ -154,7 +154,6 @@ public class Client {
         }
     }
 
-
     public static void loanSkin(SkinManagementService skinService, LoanManagementService loanService, PlayerManagementService playerService, Player player, Scanner sc) {
         System.out.print("Enter skin ID: ");
         int id = sc.nextInt();
@@ -187,7 +186,6 @@ public class Client {
         } catch (PlayerNotFoundException e) {
             System.out.println("Player not found: " + e.getMessage());
         }
-
     }
 
     public static void createData(SkinManagementService skinService, LoanManagementService loanService, Player player) {
@@ -240,11 +238,11 @@ public class Client {
         skinService.create(skin6);
 
         Skin skin7 = new Skin();
-        skin7.setName("Desert Eagle | Blaze");
-        skin7.setType(Type.PISTOL);
-        skin7.setRarity(Rarity.COVERT);
+        skin7.setName("Butterfly Knife | Fade");
+        skin7.setType(Type.MELEE);
+        skin7.setRarity(Rarity.GOLD);
         skin7.setCondition(Condition.MINIMALWEAR);
-        skin7.setPrice(21.00);
+        skin7.setPrice(2352.00);
         skinService.create(skin7);
 
         Skin skin8 = new Skin();
