@@ -7,5 +7,6 @@ public enum Rarity {
     RESTRICTED,
     CLASSIFIED,
     COVERT,
-    GOLD
+    GOLD,
+    CONTRABAND
 }
