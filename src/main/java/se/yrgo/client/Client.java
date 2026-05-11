@@ -28,12 +28,12 @@ public class Client {
         try (Scanner sc = new Scanner(System.in)) {
             while (!playerChosen) {
                 System.out.println("""
-                        
+
                         Welcome
                         1: Choose a player
                         2: Create a new player
                         3: Quit
-                        
+
                         """);
 
                 System.out.print(": ");
@@ -94,14 +94,14 @@ public class Client {
             menuChoice = 0;
             while (menuChoice != 9) {
                 System.out.printf("""
-                        
+
                         Welcome %s
                         1: View all skins
                         2: View loaned skins
                         3: Loan skin
                         4: Return skin
                         5: Quit
-                        
+
                         """, player.getName());
 
                 System.out.print(": ");
@@ -154,7 +154,8 @@ public class Client {
         }
     }
 
-    public static void loanSkin(SkinManagementService skinService, LoanManagementService loanService, PlayerManagementService playerService, Player player, Scanner sc) {
+    public static void loanSkin(SkinManagementService skinService, LoanManagementService loanService,
+            PlayerManagementService playerService, Player player, Scanner sc) {
         System.out.print("Enter skin ID: ");
         int id = sc.nextInt();
         sc.nextLine();
@@ -216,7 +217,7 @@ public class Client {
         Skin skin4 = new Skin();
         skin4.setName("Desert Eagle | Blaze");
         skin4.setType(Type.PISTOL);
-        skin4.setRarity(Rarity.COVERT);
+        skin4.setRarity(Rarity.RESTRICTED);
         skin4.setCondition(Condition.FACTORYNEW);
         skin4.setPrice(450.75);
         skinService.create(skin4);
@@ -256,7 +257,7 @@ public class Client {
         Skin skin9 = new Skin();
         skin9.setName("MP9 | Hydra");
         skin9.setType(Type.SMG);
-        skin9.setRarity(Rarity.RESTRICTED);
+        skin9.setRarity(Rarity.CLASSIFIED);
         skin9.setCondition(Condition.WELLWORN);
         skin9.setPrice(8.75);
         skinService.create(skin9);
@@ -264,7 +265,7 @@ public class Client {
         Skin skin10 = new Skin();
         skin10.setName("FAMAS | Commemoration");
         skin10.setType(Type.RIFLE);
-        skin10.setRarity(Rarity.CLASSIFIED);
+        skin10.setRarity(Rarity.COVERT);
         skin10.setCondition(Condition.MINIMALWEAR);
         skin10.setPrice(21.35);
         skinService.create(skin10);

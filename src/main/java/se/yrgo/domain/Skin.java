@@ -6,6 +6,17 @@ import jakarta.persistence.*;
 
 @Entity
 public class Skin {
+
+    public static final String RESET = "\u001B[0m";
+    public static final String WHITE = "\u001B[37m";
+    public static final String CYAN = "\u001B[36m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[38;5;57m";
+    public static final String PINK = "\u001B[95m";
+    public static final String RED = "\u001B[31m";
+    public static final String GOLD = "\u001B[33m";
+    public static final String GREEN = "\u001B[32m";
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -93,9 +104,51 @@ public class Skin {
         this.price = price;
     }
 
+    private String rarityColor() {
+
+        if (rarity == null) {
+            return RESET;
+        }
+
+        switch (rarity) {
+
+            case CONSUMER:
+                return WHITE;
+
+            case INDUSTRIAL:
+                return CYAN;
+
+            case MILSPEC:
+                return BLUE;
+
+            case RESTRICTED:
+                return PURPLE;
+
+            case CLASSIFIED:
+                return PINK;
+
+            case COVERT:
+                return RED;
+
+            case CONTRABAND:
+                return GOLD;
+
+            case GOLD:
+                return GOLD;
+
+            default:
+                return RESET;
+        }
+
+    }
+
     @Override
     public String toString() {
-        return "Skin [id=" + id + ", name=" + name + ", type=" + type + ", rarity=" + rarity + ", condition="
-                + condition + ", price=" + price + "]";
+        return "id = " + id + RESET +
+                " [ " + rarityColor() + name + RESET +
+                " | " + type + " | " +
+                rarityColor() + rarity + RESET +
+                " | " + WHITE + condition + RESET + " | " +
+                GREEN + "$" + price + RESET + " ]";
     }
 }
