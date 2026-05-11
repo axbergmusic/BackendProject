@@ -43,8 +43,8 @@ public class PlayerDaoImpl implements PlayerDao {
     }
 
     @Override
-    public List<Player> getAllPlayers() {
-        return em.createQuery("from Player as player", Player.class)
+    public List<Player> getAllPlayerNames() {
+        return em.createQuery("select playerName.name from Player as playerName", Player.class)
                 .getResultList();
     }
 }

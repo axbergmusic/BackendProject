@@ -16,5 +16,5 @@ public interface PlayerManagementService {
 
     public List<Player> getByName(String name);
 
-    public List<Player> getAllPlayers();
+    public List<Player> getAllPlayerNames();
 }
