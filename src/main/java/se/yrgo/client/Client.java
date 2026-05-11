@@ -118,7 +118,7 @@ public class Client {
         Skin skin3 = new Skin();
         skin3.setName("M4A4 | Howl");
         skin3.setType(Type.RIFLE);
-        skin3.setRarity(Rarity.MILSPEC);
+        skin3.setRarity(Rarity.CONTRABAND);
         skin3.setCondition(Condition.MINIMALWEAR);
         skin3.setPrice(1899.50);
         skinService.create(skin3);
