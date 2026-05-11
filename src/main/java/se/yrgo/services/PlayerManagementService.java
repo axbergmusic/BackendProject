@@ -8,13 +8,13 @@ public interface PlayerManagementService {
 
     public void create(Player player);
 
-    public void update(Player player);
+    public void update(Player player) throws PlayerNotFoundException;
 
-    public void delete(Player player);
+    public void delete(Player player) throws PlayerNotFoundException;
 
-    public Player getById(int id);
+    public Player getById(int id) throws PlayerNotFoundException;
 
-    public List<Player> getByName(String name);
+    public List<Player> getByName(String name) throws PlayerNotFoundException;
 
     public List<Player> getAllPlayers();
 }
