@@ -1,5 +1,6 @@
 package se.yrgo.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;

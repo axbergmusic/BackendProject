@@ -45,4 +45,7 @@ public class PlayerManagementServiceImpl implements PlayerManagementService {
     public List<Player> getAllPlayerNames() {
         return dao.getAllPlayerNames();
     }
+
+    @Override
+    public List<Player> getAllPlayers() { return dao.getAllPlayers(); }
 }
