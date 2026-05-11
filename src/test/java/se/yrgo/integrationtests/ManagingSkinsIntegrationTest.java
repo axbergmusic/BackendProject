@@ -42,4 +42,23 @@ public class ManagingSkinsIntegrationTest {
             fail("No skin was found when one should have been!");
         }
     }
+
+    @Test
+    public void testAddingSkins() {
+        skins.create(new Skin(
+                "AK-47 | Redline",
+                Type.RIFLE,
+                Rarity.CLASSIFIED,
+                Condition.FIELDTESTED,
+                15.99));
+        skins.create(new Skin(
+                "AWP | Dragon Lore",
+                Type.RIFLE,
+                Rarity.COVERT,
+                Condition.FACTORYNEW,
+                2499.99));
+
+        int skinsInDb = skins.getAllSkins().size();
+        assertEquals(2, skinsInDb);
+    }
 }
