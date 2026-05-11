@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+//mvn clean compile exec:java -Dexec.mainClass="se.yrgo.client.Client" to run
+
 public class Client {
     public static void main(String[] args) {
         ApplicationContext tx = new ClassPathXmlApplicationContext("application.xml");
