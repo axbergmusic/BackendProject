@@ -17,4 +17,6 @@ public interface PlayerManagementService {
     public List<Player> getByName(String name) throws PlayerNotFoundException;
 
     public List<Player> getAllPlayerNames();
+
+    public List<Player> getAllPlayers();
 }

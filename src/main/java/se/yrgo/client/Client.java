@@ -6,45 +6,117 @@ import se.yrgo.domain.*;
 import se.yrgo.domain.enums.*;
 import se.yrgo.services.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) {
-
         ApplicationContext tx = new ClassPathXmlApplicationContext("application.xml");
 
         PlayerManagementService playerService = tx.getBean(PlayerManagementService.class);
         SkinManagementService skinService = tx.getBean(SkinManagementService.class);
         LoanManagementService loanService = tx.getBean(LoanManagementService.class);
 
-        Player player = new Player();
-        player.setName("s1mple");
-        playerService.create(player);
+        boolean playerChosen = false;
 
-        createData(skinService, loanService, player);
+        int playerChoice = 0;
+        int menuChoice = 0;
+
+        Player player = new Player();
 
         try (Scanner sc = new Scanner(System.in)) {
-            int choice = 0;
-            while (choice != 9) {
-                System.out.printf("""
+            while (!playerChosen) {
+                System.out.println("""
+                        
+                        Welcome
+                        1: Choose a player
+                        2: Create a new player
+                        3: Quit
+                        
+                        """);
 
+                System.out.print(": ");
+                menuChoice = sc.nextInt();
+                sc.nextLine();
+
+                switch (menuChoice) {
+                    case 1 -> {
+                        List<Player> players = playerService.getAllPlayers();
+
+                        if (players.isEmpty()) {
+                            System.out.println("No current players");
+                            break;
+                        }
+                        for (Player p : players) {
+                            System.out.println(p);
+                        }
+
+                        System.out.print("\nChoose player with id: ");
+                        playerChoice = sc.nextInt();
+                        sc.nextLine();
+
+                        for (Player p : players) {
+                            if (playerChoice == p.getId()) {
+                                try {
+                                    player = playerService.getById(playerChoice);
+                                } catch (PlayerNotFoundException e) {
+                                    System.out.println("Player not found: " + e.getMessage());
+                                }
+                                playerChosen = true;
+                            }
+                        }
+                    }
+
+                    case 2 -> {
+                        System.out.print("Enter name: ");
+                        String name = sc.nextLine();
+
+                        player.setName(name);
+
+                        playerService.create(player);
+
+                        playerChosen = true;
+                    }
+
+                    case 3 -> {
+                        System.exit(0);
+                    }
+
+                    default -> {
+                        System.out.println("Invalid choice");
+                    }
+                }
+            }
+
+            createData(skinService, loanService, player);
+
+            menuChoice = 0;
+            while (menuChoice != 9) {
+                System.out.printf("""
+                        
                         Welcome %s
                         1: View all skins
                         2: View loaned skins
                         3: Loan skin
                         4: Return skin
                         5: Quit
-
-                        """, playerService.getAllPlayerNames());
+                        
+                        """, player.getName());
 
                 System.out.print(": ");
-                choice = sc.nextInt();
+                menuChoice = sc.nextInt();
                 System.out.println();
 
-                switch (choice) {
+                switch (menuChoice) {
                     case 1 -> {
-                        List<Skin> skins = skinService.getAllSkins();
+                        List<Skin> skins = skinService.getAllSkins().stream()
+                                .filter(s -> !s.isLoaned())
+                                .toList();
+                        if (skins.isEmpty()) {
+                            System.out.println("No skins existing");
+                            break;
+                        }
                         for (Skin s : skins) {
                             System.out.println(s);
                         }
@@ -52,11 +124,18 @@ public class Client {
                     }
 
                     case 2 -> {
-                        loanService.getAllLoans();
+                        List<Loan> loans = player.getLoans();
+                        if (loans == null || loans.isEmpty()) {
+                            System.out.println("This player has no loans");
+                            break;
+                        }
+                        for (Loan l : loans) {
+                            System.out.println(l);
+                        }
                     }
 
                     case 3 -> {
-                        addSkin(skinService, loanService, player);
+                        loanSkin(skinService, loanService, playerService, player, sc);
                     }
 
                     case 4 -> {
@@ -64,7 +143,7 @@ public class Client {
                     }
 
                     case 5 -> {
-                        choice = 9;
+                        menuChoice = 9;
                     }
 
                     default -> {
@@ -75,21 +154,37 @@ public class Client {
         }
     }
 
-    public static void addSkin(SkinManagementService skinService, LoanManagementService loanService, Player player) {
-        try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Enter skin ID: ");
-            int id = sc.nextInt();
+    public static void loanSkin(SkinManagementService skinService, LoanManagementService loanService, PlayerManagementService playerService, Player player, Scanner sc) {
+        System.out.print("Enter skin ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
 
-            Skin newSkin = skinService.getById(id);
+        try {
+            Skin skinToAdd = skinService.getById(id);
 
             Loan newLoan = new Loan();
             newLoan.setPlayer(player);
-            newLoan.setSkin(newSkin);
+            newLoan.setSkin(skinToAdd);
+            loanService.create(newLoan);
 
-            skinService.delete(newSkin);
+            List<Loan> playerLoans = player.getLoans();
+            if (playerLoans == null || playerLoans.isEmpty()) {
+                playerLoans = new ArrayList<>();
+            }
+            playerLoans.add(newLoan);
+            player.setLoans(playerLoans);
+
+            playerService.update(player);
+
+            skinToAdd.setLoaned(true);
+            skinService.update(skinToAdd);
+
+            System.out.println("Skin loaned successfully!");
 
         } catch (SkinNotFoundException e) {
             System.out.println("Skin not found: " + e.getMessage());
+        } catch (PlayerNotFoundException e) {
+            System.out.println("Player not found: " + e.getMessage());
         }
     }
 
@@ -173,10 +268,5 @@ public class Client {
         skin10.setCondition(Condition.MINIMALWEAR);
         skin10.setPrice(21.35);
         skinService.create(skin10);
-
-        Loan loan = new Loan();
-        loan.setPlayer(player);
-        loan.setSkin(skin1);
-        loanService.create(loan);
     }
 }

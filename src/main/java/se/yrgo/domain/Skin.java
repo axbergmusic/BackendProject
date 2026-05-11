@@ -12,6 +12,8 @@ public class Skin {
 
     private String name;
 
+    private boolean loaned = false;
+
     @Enumerated(EnumType.STRING)
     private Type type;
 
@@ -33,6 +35,14 @@ public class Skin {
         this.rarity = rarity;
         this.condition = condition;
         this.price = price;
+    }
+
+    public boolean isLoaned() {
+        return loaned;
+    }
+
+    public void setLoaned(boolean loaned) {
+        this.loaned = loaned;
     }
 
     public int getId() {
