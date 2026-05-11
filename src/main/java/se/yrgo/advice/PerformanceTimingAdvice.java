@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PerformanceTimingAdvice {
 
-    @Around("execution(* se.yrgo..*(..))")
+    @Around("execution(* se.yrgo.services.*.*(..))")
     public Object performTimingMeasurement(ProceedingJoinPoint method) throws Throwable {
 
         // before
@@ -23,8 +23,8 @@ public class PerformanceTimingAdvice {
             // after
             long endTime = System.nanoTime();
             long timeTaken = endTime - startTime;
-            System.out.println("The method " + method.getSignature().getName()
-                    + " took " + timeTaken / 1000000 + " ms");
+            System.out.println("The method '" + method.getSignature().getName()
+                    + "' took " + timeTaken / 1000000 + " ms");
         }
     }
 }
