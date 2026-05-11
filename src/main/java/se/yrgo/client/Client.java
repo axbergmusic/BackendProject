@@ -18,35 +18,34 @@ public class Client {
         SkinManagementService skinService = tx.getBean(SkinManagementService.class);
         LoanManagementService loanService = tx.getBean(LoanManagementService.class);
 
-
         Player player = new Player();
         player.setName("s1mple");
         playerService.create(player);
 
         createData(skinService, loanService, player);
 
-        try(Scanner sc = new Scanner(System.in)) {
+        try (Scanner sc = new Scanner(System.in)) {
             int choice = 0;
-            while(choice != 9) {
+            while (choice != 9) {
                 System.out.printf("""
-                
-                Welcome %s
-                1: View all skins
-                2: View loaned skins
-                3: Loan skin
-                4: Return skin
-                5: Quit
-                
-                """, playerService.getAllPlayerNames());
+
+                        Welcome %s
+                        1: View all skins
+                        2: View loaned skins
+                        3: Loan skin
+                        4: Return skin
+                        5: Quit
+
+                        """, playerService.getAllPlayerNames());
 
                 System.out.print(": ");
                 choice = sc.nextInt();
                 System.out.println();
 
-                switch(choice) {
+                switch (choice) {
                     case 1 -> {
                         List<Skin> skins = skinService.getAllSkins();
-                        for(Skin s : skins) {
+                        for (Skin s : skins) {
                             System.out.println(s);
                         }
 
@@ -74,17 +73,10 @@ public class Client {
                 }
             }
         }
-
-
-
-
-
-
-
     }
 
     public static void addSkin(SkinManagementService skinService, LoanManagementService loanService, Player player) {
-        try(Scanner sc = new Scanner(System.in)) {
+        try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter skin ID: ");
             int id = sc.nextInt();
 
@@ -99,8 +91,6 @@ public class Client {
         } catch (SkinNotFoundException e) {
             System.out.println("Skin not found: " + e.getMessage());
         }
-
-
     }
 
     public static void createData(SkinManagementService skinService, LoanManagementService loanService, Player player) {
@@ -153,11 +143,11 @@ public class Client {
         skinService.create(skin6);
 
         Skin skin7 = new Skin();
-        skin7.setName("Desert Eagle | Blaze");
-        skin7.setType(Type.PISTOL);
-        skin7.setRarity(Rarity.COVERT);
+        skin7.setName("Butterfly Knife | Fade");
+        skin7.setType(Type.MELEE);
+        skin7.setRarity(Rarity.GOLD);
         skin7.setCondition(Condition.MINIMALWEAR);
-        skin7.setPrice(21.00);
+        skin7.setPrice(2352.00);
         skinService.create(skin7);
 
         Skin skin8 = new Skin();
