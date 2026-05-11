@@ -6,6 +6,7 @@ import se.yrgo.domain.*;
 import se.yrgo.domain.enums.*;
 import se.yrgo.services.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Client {
@@ -24,27 +25,31 @@ public class Client {
 
         createData(skinService, loanService, player);
 
-        System.out.printf("""
-                Welcome %s
-                """, playerService.getAllPlayerNames());
-
         try(Scanner sc = new Scanner(System.in)) {
             int choice = 0;
             while(choice != 9) {
-                System.out.println("""
+                System.out.printf("""
+                
+                Welcome %s
                 1: View all skins
                 2: View loaned skins
                 3: Loan skin
                 4: Return skin
                 5: Quit
-                """);
+                
+                """, playerService.getAllPlayerNames());
 
                 System.out.print(": ");
                 choice = sc.nextInt();
+                System.out.println();
 
                 switch(choice) {
                     case 1 -> {
-                        skinService.getAllSkins();
+                        List<Skin> skins = skinService.getAllSkins();
+                        for(Skin s : skins) {
+                            System.out.println(s);
+                        }
+
                     }
 
                     case 2 -> {
