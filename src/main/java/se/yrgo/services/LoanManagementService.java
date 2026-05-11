@@ -8,11 +8,11 @@ public interface LoanManagementService {
 
     public void create(Loan loan);
 
-    public void update(Loan loan);
+    public void update(Loan loan) throws LoanNotFoundException;
 
-    public void delete(Loan loan);
+    public void delete(Loan loan) throws LoanNotFoundException;
 
-    public List<Loan> getByPlayer(int id);
+    public List<Loan> getByPlayer(int id) throws LoanNotFoundException;
 
     public List<Loan> getAllLoans();
 }
