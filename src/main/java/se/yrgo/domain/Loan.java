@@ -23,6 +23,11 @@ public class Loan {
         this.player = player;
     }
 
+    public Loan(Skin skin, Player player) {
+        this.skin = skin;
+        this.player = player;
+    }
+
     public int getId() {
         return id;
     }
@@ -49,6 +54,6 @@ public class Loan {
 
     @Override
     public String toString() {
-        return "Loan [id=" + id + ", skin=" + skin + ", player=" + player + "]";
+        return "Skin " + skin + " " + player + " " + "]";
     }
 }
