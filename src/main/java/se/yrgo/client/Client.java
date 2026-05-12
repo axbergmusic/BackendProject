@@ -37,7 +37,7 @@ public class Client {
                         3: Loan skin
                         4: Return skin
                         5: Change player
-                        5: Quit
+                        6: Quit
 
                         """, currentPlayer.getName());
 
@@ -150,9 +150,12 @@ public class Client {
                     System.out.print("Enter name: ");
                     String name = sc.nextLine();
 
-                    currentPlayer.setName(name);
+                    Player newPlayer = new Player();
+                    newPlayer.setName(name);
 
-                    playerService.create(currentPlayer);
+                    playerService.create(newPlayer);
+
+                    currentPlayer = newPlayer;
                 }
 
                 case 3 -> {
