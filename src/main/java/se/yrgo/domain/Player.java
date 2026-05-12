@@ -1,6 +1,5 @@
 package se.yrgo.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -21,6 +20,11 @@ public class Player {
 
     public Player(int id, String name, List<Loan> loans) {
         this.id = id;
+        this.name = name;
+        this.loans = loans;
+    }
+
+    public Player(String name, List<Loan> loans) {
         this.name = name;
         this.loans = loans;
     }

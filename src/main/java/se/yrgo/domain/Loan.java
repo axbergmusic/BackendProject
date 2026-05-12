@@ -23,6 +23,11 @@ public class Loan {
         this.player = player;
     }
 
+    public Loan(Skin skin, Player player) {
+        this.skin = skin;
+        this.player = player;
+    }
+
     public int getId() {
         return id;
     }
