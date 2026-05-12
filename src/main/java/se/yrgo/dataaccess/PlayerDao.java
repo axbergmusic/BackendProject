@@ -14,9 +14,5 @@ public interface PlayerDao {
 
     public Player getById(int id);
 
-    public List<Player> getByName(String name);
-
-    public List<Player> getAllPlayerNames();
-
     public List<Player> getAllPlayers();
 }

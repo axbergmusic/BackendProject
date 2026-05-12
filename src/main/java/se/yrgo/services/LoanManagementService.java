@@ -12,7 +12,5 @@ public interface LoanManagementService {
 
     public void delete(Loan loan) throws LoanNotFoundException;
 
-    public List<Loan> getByPlayer(int id) throws LoanNotFoundException;
-
     public List<Loan> getAllLoans();
 }

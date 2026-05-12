@@ -12,7 +12,5 @@ public interface LoanDao {
 
     public void delete(Loan loan);
 
-    public List<Loan> getByPlayer(int id);
-
     public List<Loan> getAllLoans();
 }

@@ -15,13 +15,5 @@ public interface SkinDao {
 
     public Skin getById(int id);
 
-    public List<Skin> getByName(String name);
-
-    public List<Skin> getByType(Type type);
-
-    public List<Skin> getByRarity(Rarity rarity);
-
-    public List<Skin> getByCondition(Condition condition);
-
     public List<Skin> getAllSkins();
 }

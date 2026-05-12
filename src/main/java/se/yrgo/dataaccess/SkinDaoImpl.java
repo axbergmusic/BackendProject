@@ -38,34 +38,6 @@ public class SkinDaoImpl implements SkinDao {
     }
 
     @Override
-    public List<Skin> getByName(String name) {
-        return em.createQuery("from Skin as skin where skin.name = :name", Skin.class)
-                .setParameter("name", name)
-                .getResultList();
-    }
-
-    @Override
-    public List<Skin> getByType(Type type) {
-        return em.createQuery("from Skin as skin where skin.type = :type", Skin.class)
-                .setParameter("type", type)
-                .getResultList();
-    }
-
-    @Override
-    public List<Skin> getByRarity(Rarity rarity) {
-        return em.createQuery("from Skin as skin where skin.rarity = :rarity", Skin.class)
-                .setParameter("rarity", rarity)
-                .getResultList();
-    }
-
-    @Override
-    public List<Skin> getByCondition(Condition condition) {
-        return em.createQuery("from Skin as skin where skin.condition = :condition", Skin.class)
-                .setParameter("condition", condition)
-                .getResultList();
-    }
-
-    @Override
     public List<Skin> getAllSkins() {
         return em.createQuery("from Skin as skin", Skin.class)
                 .getResultList();

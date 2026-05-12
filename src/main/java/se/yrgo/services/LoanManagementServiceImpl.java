@@ -32,11 +32,6 @@ public class LoanManagementServiceImpl implements LoanManagementService {
     }
 
     @Override
-    public List<Loan> getByPlayer(int id) {
-        return dao.getByPlayer(id);
-    }
-
-    @Override
     public List<Loan> getAllLoans() {
         return dao.getAllLoans();
     }
