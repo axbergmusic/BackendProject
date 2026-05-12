@@ -54,6 +54,6 @@ public class Loan {
 
     @Override
     public String toString() {
-        return "Skin " + skin + " " + player + " " + "]";
+        return "Loan id " +id +" |" +" Skin " + skin  + player + " " + "]";
     }
 }

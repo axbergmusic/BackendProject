@@ -55,6 +55,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "{Loaned by " + name +" |" + " id = " + id + "}";
+        return "[ Player id = " + id +" | "  + name;
     }
+    
 }
