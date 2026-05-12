@@ -25,8 +25,7 @@ public class LoanDaoImpl implements LoanDao {
 
     @Override
     public void delete(Loan loan) {
-        em.remove(loan);
-    }
+        em.remove(em.contains(loan) ? loan : em.merge(loan)); }
 
     @Override
     public List<Loan> getByPlayer(int id) {

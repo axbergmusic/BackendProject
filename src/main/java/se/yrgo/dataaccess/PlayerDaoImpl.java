@@ -15,7 +15,7 @@ public class PlayerDaoImpl implements PlayerDao {
 
     @Override
     public void create(Player player) {
-        em.persist(player);
+        em.persist(em.contains(player) ? player : em.merge(player));
     }
 
     @Override
@@ -25,8 +25,10 @@ public class PlayerDaoImpl implements PlayerDao {
 
     @Override
     public void delete(Player player) {
-        em.remove(player);
+        em.remove(em.contains(player) ? player : em.merge(player));
     }
+
+
 
     @Override
     public Player getById(int id) {

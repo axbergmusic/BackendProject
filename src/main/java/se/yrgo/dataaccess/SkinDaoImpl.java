@@ -26,8 +26,9 @@ public class SkinDaoImpl implements SkinDao {
 
     @Override
     public void delete(Skin skin) {
-        em.remove(skin);
+        em.remove(em.contains(skin) ? skin : em.merge(skin));
     }
+
 
     @Override
     public Skin getById(int id) {

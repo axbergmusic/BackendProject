@@ -13,7 +13,7 @@ public class Player {
 
     private String name;
 
-    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Loan> loans;
 
     public Player() {
