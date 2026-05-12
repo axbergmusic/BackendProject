@@ -49,6 +49,6 @@ public class Loan {
 
     @Override
     public String toString() {
-        return "Loan [id=" + id + ", skin=" + skin + ", player=" + player + "]";
+        return "Skin " + skin + " " + player + " " + "]";
     }
 }
