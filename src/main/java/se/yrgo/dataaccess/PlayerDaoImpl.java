@@ -15,7 +15,7 @@ public class PlayerDaoImpl implements PlayerDao {
 
     @Override
     public void create(Player player) {
-        em.persist(em.contains(player) ? player : em.merge(player));
+        em.persist(player);
     }
 
     @Override

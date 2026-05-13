@@ -15,9 +15,14 @@ public class LoanDaoImpl implements LoanDao {
 
     @Override
     public void create(Loan loan) {
+        if (loan.getPlayer() != null) {
+            loan.setPlayer(em.merge(loan.getPlayer()));
+        }
+        if (loan.getSkin() != null) {
+            loan.setSkin(em.merge(loan.getSkin()));
+        }
         em.persist(loan);
     }
-
     @Override
     public void update(Loan loan) {
         em.merge(loan);
