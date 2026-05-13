@@ -239,9 +239,9 @@ public class Client {
         return player;
     }
 
-    private static int readInt(Scanner sc) {
+    private static int readInt(Scanner sc) {a
         while (!sc.hasNextInt()) {
-            System.out.println("Invalid input, enter a number: ");
+            System.out.print("Invalid input, enter a number: ");
             sc.nextLine();
         }
         int value = sc.nextInt();
