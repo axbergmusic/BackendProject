@@ -239,7 +239,7 @@ public class Client {
         return player;
     }
 
-    private static int readInt(Scanner sc) {a
+    private static int readInt(Scanner sc) {
         while (!sc.hasNextInt()) {
             System.out.print("Invalid input, enter a number: ");
             sc.nextLine();

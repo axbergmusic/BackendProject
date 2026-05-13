@@ -55,7 +55,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "[ Player id = " + id +" | "  + name;
+        return "[ Player id = " + id +" | "  + name + " ]";
     }
     
 }
