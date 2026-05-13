@@ -28,7 +28,7 @@ public class ManagingSkinsIntegrationTest {
                 "AK-47 | Redline",
                 Type.RIFLE,
                 Rarity.CLASSIFIED,
-                Condition.FIELDTESTED,
+                Condition.FIELD_TESTED,
                 15.99);
         skins.create(testSkin);
 
@@ -48,13 +48,13 @@ public class ManagingSkinsIntegrationTest {
                 "AK-47 | Redline",
                 Type.RIFLE,
                 Rarity.CLASSIFIED,
-                Condition.FIELDTESTED,
+                Condition.FIELD_TESTED,
                 15.99));
         skins.create(new Skin(
                 "AWP | Dragon Lore",
                 Type.RIFLE,
                 Rarity.COVERT,
-                Condition.FACTORYNEW,
+                Condition.FACTORY_NEW,
                 2499.99));
 
         int skinsInDb = skins.getAllSkins().size();

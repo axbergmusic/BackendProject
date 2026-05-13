@@ -29,7 +29,7 @@ public class ManagingLoansIntegrationTest {
                                 "AK-47 | Redline",
                                 Type.RIFLE,
                                 Rarity.CLASSIFIED,
-                                Condition.FIELDTESTED,
+                                Condition.FIELD_TESTED,
                                 15.99),
                         new Player(
                                 "s1mple",
