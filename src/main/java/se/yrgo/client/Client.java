@@ -6,9 +6,7 @@ import se.yrgo.domain.*;
 import se.yrgo.domain.enums.*;
 import se.yrgo.services.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Client {
     public static void main(String[] args) {
@@ -105,12 +103,12 @@ public class Client {
         while (!playerChosen) {
             System.out.println("""
 
-                        Welcome
-                        1: Choose a player
-                        2: Create a new player
-                        3: Quit
+                    Welcome
+                    1: Choose a player
+                    2: Create a new player
+                    3: Quit
 
-                        """);
+                    """);
 
             System.out.print(": ");
             menuChoice = sc.nextInt();
@@ -172,7 +170,7 @@ public class Client {
     }
 
     public static void returnSkin(SkinManagementService skinService, LoanManagementService loanService,
-                                PlayerManagementService playerService, Player player, Scanner sc) {
+            PlayerManagementService playerService, Player player, Scanner sc) {
         System.out.print("Enter loan ID: ");
         int id = sc.nextInt();
         sc.nextLine();
@@ -181,8 +179,8 @@ public class Client {
 
         try {
             List<Loan> loans = player.getLoans();
-            for(Loan l : loans) {
-                if(l.getId() == id) {
+            for (Loan l : loans) {
+                if (l.getId() == id) {
                     loanToReturn = l;
 
                     loans.remove(loanToReturn);
@@ -220,7 +218,7 @@ public class Client {
                 .stream()
                 .anyMatch(loan -> loan.getSkin().getId() == id);
 
-        if(isLoaned) {
+        if (isLoaned) {
             System.out.println("This skin is loaned");
             return;
         }
@@ -368,11 +366,11 @@ public class Client {
         skinService.create(skin14);
 
         Skin skin15 = new Skin();
-        skin15.setName("AK-47 | Redline (Minimal Wear)");
-        skin15.setType(Type.RIFLE);
+        skin15.setName("Glock-18 | Twilight Galaxy");
+        skin15.setType(Type.PISTOL);
         skin15.setRarity(Rarity.CLASSIFIED);
         skin15.setCondition(Condition.MINIMALWEAR);
-        skin15.setPrice(159.40);
+        skin15.setPrice(283.40);
         skinService.create(skin15);
 
         Skin skin16 = new Skin();
