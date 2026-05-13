@@ -38,26 +38,6 @@ public class SkinManagementServiceImpl implements SkinManagementService {
     }
 
     @Override
-    public List<Skin> getByName(String name) {
-        return dao.getByName(name);
-    }
-
-    @Override
-    public List<Skin> getByType(Type type) {
-        return dao.getByType(type);
-    }
-
-    @Override
-    public List<Skin> getByRarity(Rarity rarity) {
-        return dao.getByRarity(rarity);
-    }
-
-    @Override
-    public List<Skin> getByCondition(Condition condition) {
-        return dao.getByCondition(condition);
-    }
-
-    @Override
     public List<Skin> getAllSkins() {
         return dao.getAllSkins();
     }

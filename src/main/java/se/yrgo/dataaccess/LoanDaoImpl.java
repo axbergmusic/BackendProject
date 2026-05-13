@@ -28,13 +28,6 @@ public class LoanDaoImpl implements LoanDao {
         em.remove(em.contains(loan) ? loan : em.merge(loan)); }
 
     @Override
-    public List<Loan> getByPlayer(int id) {
-        return em.createQuery("from Loan as loan where loan.player.id = :player", Loan.class)
-                .setParameter("player", id)
-                .getResultList();
-    }
-
-    @Override
     public List<Loan> getAllLoans() {
         return em.createQuery("from Loan as loan", Loan.class)
                 .getResultList();
