@@ -250,26 +250,26 @@ public class Client {
     }
 
     public static void createData(SkinManagementService skinService) {
-        createSkin(skinService, "AK-47 | Redline", Type.RIFLE, Rarity.CLASSIFIED, Condition.FIELDTESTED, 35.99);
-        createSkin(skinService, "AWP | Dragon Lore", Type.RIFLE, Rarity.COVERT, Condition.FACTORYNEW, 13322.45);
-        createSkin(skinService, "M4A4 | Howl", Type.RIFLE, Rarity.CONTRABAND, Condition.MINIMALWEAR, 6163.51);
-        createSkin(skinService, "MP7 | Armor Core", Type.SMG, Rarity.MILSPEC, Condition.FIELDTESTED, 1.35);
-        createSkin(skinService, "USP-S | Kill Confirmed", Type.PISTOL, Rarity.COVERT, Condition.FIELDTESTED, 76.10);
-        createSkin(skinService, "Glock-18 | Fade", Type.PISTOL, Rarity.RESTRICTED, Condition.FACTORYNEW, 2102.83);
-        createSkin(skinService, "Butterfly Knife | Fade", Type.MELEE, Rarity.GOLD, Condition.MINIMALWEAR, 2592.83);
+        createSkin(skinService, "AK-47 | Redline", Type.RIFLE, Rarity.CLASSIFIED, Condition.FIELD_TESTED, 35.99);
+        createSkin(skinService, "AWP | Dragon Lore", Type.RIFLE, Rarity.COVERT, Condition.FACTORY_NEW, 13322.45);
+        createSkin(skinService, "M4A4 | Howl", Type.RIFLE, Rarity.CONTRABAND, Condition.MINIMAL_WEAR, 6163.51);
+        createSkin(skinService, "MP7 | Armor Core", Type.SMG, Rarity.MILSPEC, Condition.FIELD_TESTED, 1.35);
+        createSkin(skinService, "USP-S | Kill Confirmed", Type.PISTOL, Rarity.COVERT, Condition.FIELD_TESTED, 76.10);
+        createSkin(skinService, "Glock-18 | Fade", Type.PISTOL, Rarity.RESTRICTED, Condition.FACTORY_NEW, 2102.83);
+        createSkin(skinService, "Butterfly Knife | Fade", Type.MELEE, Rarity.GOLD, Condition.MINIMAL_WEAR, 2592.83);
         createSkin(skinService, "P90 | Asiimov", Type.SMG, Rarity.COVERT, Condition.BATTLESCARRED, 165.80);
-        createSkin(skinService, "MP9 | Hydra", Type.SMG, Rarity.CLASSIFIED, Condition.WELLWORN, 5.75);
-        createSkin(skinService, "FAMAS | Commemoration", Type.RIFLE, Rarity.COVERT, Condition.MINIMALWEAR, 39.92);
-        createSkin(skinService, "Mac-10 | Fade", Type.SMG, Rarity.MILSPEC, Condition.MINIMALWEAR, 77.85);
-        createSkin(skinService, "Desert Eagle | Blaze", Type.PISTOL, Rarity.RESTRICTED, Condition.FACTORYNEW, 837.39);
-        createSkin(skinService, "P250 | Valence", Type.PISTOL, Rarity.MILSPEC, Condition.WELLWORN, 0.58);
-        createSkin(skinService, "Sport Gloves | Vice", Type.GLOVES, Rarity.GOLD, Condition.FACTORYNEW, 8449.92);
-        createSkin(skinService, "Glock-18 | Twilight Galaxy", Type.PISTOL, Rarity.CLASSIFIED, Condition.MINIMALWEAR, 283.40);
-        createSkin(skinService, "M4A1-S | Cyrex", Type.RIFLE, Rarity.COVERT, Condition.FIELDTESTED, 202.80);
-        createSkin(skinService, "Glock-18 | Candy Apple", Type.PISTOL, Rarity.MILSPEC, Condition.FACTORYNEW, 2.48);
-        createSkin(skinService, "AWP | Dragon Lore (Souvenir)", Type.RIFLE, Rarity.CONTRABAND, Condition.FIELDTESTED, 619712.17);
-        createSkin(skinService, "USP-S | Guardian", Type.PISTOL, Rarity.RESTRICTED, Condition.MINIMALWEAR, 4.08);
-        createSkin(skinService, "Butterfly Knife | Night", Type.MELEE, Rarity.GOLD, Condition.WELLWORN, 593.77);
+        createSkin(skinService, "MP9 | Hydra", Type.SMG, Rarity.CLASSIFIED, Condition.WELL_WORN, 5.75);
+        createSkin(skinService, "FAMAS | Commemoration", Type.RIFLE, Rarity.COVERT, Condition.MINIMAL_WEAR, 39.92);
+        createSkin(skinService, "Mac-10 | Fade", Type.SMG, Rarity.MILSPEC, Condition.MINIMAL_WEAR, 77.85);
+        createSkin(skinService, "Desert Eagle | Blaze", Type.PISTOL, Rarity.RESTRICTED, Condition.FACTORY_NEW, 837.39);
+        createSkin(skinService, "P250 | Valence", Type.PISTOL, Rarity.MILSPEC, Condition.WELL_WORN, 0.58);
+        createSkin(skinService, "Sport Gloves | Vice", Type.GLOVES, Rarity.GOLD, Condition.FACTORY_NEW, 8449.92);
+        createSkin(skinService, "Glock-18 | Twilight Galaxy", Type.PISTOL, Rarity.CLASSIFIED, Condition.MINIMAL_WEAR, 283.40);
+        createSkin(skinService, "M4A1-S | Cyrex", Type.RIFLE, Rarity.COVERT, Condition.FIELD_TESTED, 202.80);
+        createSkin(skinService, "Glock-18 | Candy Apple", Type.PISTOL, Rarity.MILSPEC, Condition.FACTORY_NEW, 2.48);
+        createSkin(skinService, "AWP | Dragon Lore (Souvenir)", Type.RIFLE, Rarity.CONTRABAND, Condition.FIELD_TESTED, 619712.17);
+        createSkin(skinService, "USP-S | Guardian", Type.PISTOL, Rarity.RESTRICTED, Condition.MINIMAL_WEAR, 4.08);
+        createSkin(skinService, "Butterfly Knife | Night", Type.MELEE, Rarity.GOLD, Condition.WELL_WORN, 593.77);
     }
 
     private static void createSkin(SkinManagementService skinService, String name, Type type, Rarity rarity, Condition condition, double price) {

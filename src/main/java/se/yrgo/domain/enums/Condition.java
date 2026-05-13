@@ -2,8 +2,8 @@ package se.yrgo.domain.enums;
 
 public enum Condition {
     BATTLESCARRED,
-    WELLWORN,
-    FIELDTESTED,
-    MINIMALWEAR,
-    FACTORYNEW
+    WELL_WORN,
+    FIELD_TESTED,
+    MINIMAL_WEAR,
+    FACTORY_NEW
 }
