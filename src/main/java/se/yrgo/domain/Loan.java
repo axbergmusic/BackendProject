@@ -8,7 +8,7 @@ public class Loan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
+    @ManyToOne
     private Skin skin;
 
     @ManyToOne
