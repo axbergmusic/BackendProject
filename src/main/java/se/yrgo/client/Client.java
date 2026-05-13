@@ -5,9 +5,7 @@ import se.yrgo.domain.*;
 import se.yrgo.domain.enums.*;
 import se.yrgo.services.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Client {
     public static void main(String[] args) {
@@ -99,12 +97,12 @@ public class Client {
 
         while (!playerChosen) {
             System.out.println("""
-                    
+
                     Welcome
                     1: Choose a player
                     2: Create a new player
                     3: Quit
-                    
+
                     """);
 
             System.out.print(": ");
@@ -158,7 +156,7 @@ public class Client {
     }
 
     public static Player returnSkin(SkinManagementService skinService, LoanManagementService loanService,
-                                    PlayerManagementService playerService, Player player, Scanner sc) {
+            PlayerManagementService playerService, Player player, Scanner sc) {
         System.out.print("Enter loan ID: ");
         int id = readInt(sc);
 
